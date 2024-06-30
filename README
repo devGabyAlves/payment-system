@@ -1,0 +1,63 @@
+# Real-Time Payment Notification API
+
+## Overview
+
+This project demonstrates the creation of an API using Flask that incorporates real-time notifications with the WebSocket protocol using the Flask-SocketIO library. The API supports payment creation, QR Code generation, and a dedicated class for handling PIX payments. Additionally, it includes endpoints for payment processing and QR Code serving, WebSocket configuration for client connection and disconnection, and a testing file for data verification.
+
+## Features
+
+- **Real-Time Notifications**: Implemented using Flask-SocketIO to notify clients in real-time.
+- **Payment Creation**: Endpoints to create and manage payments.
+- **QR Code Generation**: Generate and serve QR Codes for payments.
+- **PIX Integration**: Dedicated class for handling PIX payments.
+- **Organized Endpoints**: Payment-based endpoint organization for easier updates and maintenance.
+- **WebSocket Management**: Client connection and disconnection handling for real-time updates.
+- **Testing**: Includes a testing file to verify data and file creation using pytest.
+
+## Installation
+
+1. **Clone the Repository**:
+    ```bash
+    git clone https://github.com/devGabyAlves/payment-system.git
+    cd payment-system
+    ```
+
+2. **Create and activate a virtual environment**:
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate
+    ```
+
+3. **Install dependencies**:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+## Usage
+
+1. **Run the Application**:
+    ```bash
+    flask run
+    ```
+
+2. **Access the API**:
+    - Open your browser or use a tool like Postman to interact with the API endpoints.
+
+## Endpoints
+
+- **/create_payment**: Endpoint to create a new payment.
+- **/generate_qr_code**: Endpoint to generate a QR Code for a payment.
+- **/serve_qr_code/<payment_id>**: Serve the generated QR Code.
+- **/confirm_payment**: Confirm a payment and notify connected clients.
+  
+## WebSocket
+
+- **Connection**: Handle client connections.
+- **Disconnection**: Handle client disconnections.
+- **Notifications**: Send real-time payment confirmations to connected clients.
+
+## Testing
+
+To run the tests with pytest:
+```bash
+pytest
